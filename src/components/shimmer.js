@@ -7,4 +7,20 @@ const Shimmer = () => {
   )
 }
 
+export const MenuShimmer = () => {
+  return (
+    <>
+      <div className="name-shimmer"></div>
+      <div className="container-shimmer">
+        {Array(6).fill().map((e,index)=> {
+          return (<div key= {index} className="menu-shimmer"></div>)
+        })}
+      </div>
+    </>    
+  )
+}
+
+
+
 export default Shimmer;
+

@@ -1,8 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { IMG_CDN_url } from "../config";
-import Shimmer from "./shimmer";
-
+import {MenuShimmer} from  "../components/shimmer"
 
 const RestaurantMenu = () =>{
   const params = useParams();
@@ -24,19 +23,27 @@ const RestaurantMenu = () =>{
   }
   
 
-  return (!restaurantD)? <Shimmer/> :(
-    <div className="restro">
-      <div className="details">
-       <h1>Restaurant id:{resId}</h1>
-       <img className="menuImage" src={IMG_CDN_url + restaurantD?.cloudinaryImageId}/>
-       <div>
+  return (!restaurantD)? <MenuShimmer/> :(
+    <div className="menu-list">
+      <div className="menu-container">
+       <img src={IMG_CDN_url + restaurantD?.cloudinaryImageId} alt="image"/>
+       <div className="details">
          <h2>{restaurantD?.name}</h2>
          <h3>{restaurantD?.areaName}</h3>
          <h3>{restaurantD?.city}</h3>
-         <h3>{restaurantD?.avgRating}</h3>
+         <h3>Ratings: {restaurantD?.avgRating}</h3>
          <h3>{restaurantD?.costForTwoMsg}</h3>
        </div>
-       <div>{menuList?.map((item) => <><li key= {item?.card?.info?.id}>{item?.card?.info?.name}</li></>)}</div>
+     </div> 
+     <div className="menu">{menuList?.map((item) =>
+       <div className= "menu-box" key= {item?.card?.info?.id}>
+          <div className="items">
+            <div>{item?.card?.info?.name}</div>
+            <br></br>
+            <div> ₹{item?.card?.info?.price / 100} </div>
+          </div>
+          <img src={IMG_CDN_url + item?.card?.info?.imageId} />
+        </div>)}
       </div>
     </div>
   )

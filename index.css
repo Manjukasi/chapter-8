@@ -20,11 +20,16 @@
 .nav-items ul li {
   padding: 10px;
   text-align: center;
-  text-decoration: dashed;
+  font-size: 20px;
+  font-weight: bold;
+}
+.nav-items ul li :link {
+  text-decoration: none;
 }
 
 .card {
-  width: 200px;
+  width: 225px;
+  height: 23rem;
   border-radius: 5px;
   box-shadow: -1px 4px 20px 14px rgba(0, 0, 0, 0.2);
   padding: 10px;
@@ -33,7 +38,7 @@
 }
 .card img {
   width: 100%;
-  height: 45%;
+  height: 50%;
   border-radius: 10px;
 }
 .restaurant-list{
@@ -47,12 +52,73 @@
 }
 .shimmer-card {
   display: flex;
-  width: 200px;
-  height: 250px;
+  width: 250px;
+  height: 350px;
   border: 2px lightgray;
   background-color: lightgray;
-  margin: 20px;
+  margin: 25px;
 }
+.menu-list {
+  background-color: rgba(240, 230, 140, 0.584);
+}
+.menu-container{
+  width: auto;
+  display: flex;
+  min-height: 20vh;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(128, 128, 128, 0.99);
+  border-radius: 10px;
+ }
+ .menu-container img {
+   width: 250px;
+   height: 170px;
+   border-radius: 5px;
+   margin: 3px;
+ }
+ .details {
+   font-size: 15px;
+   margin-left:10px;
+ }
+ .menu-box img {
+   width: 200px;
+   margin: 10px;
+   border-radius: 100px
+ }
+ .menu-box {
+   display: flex;
+   justify-content:space-between ;
+   align-items: center;
+   margin: 10px;
+   width: auto;
+   min-height: 10vh;
+   border: 1px solid grey;
+   border-radius: 20px;  
+ }
+ .menu, .container-shimmer{
+   display: grid;
+   justify-content: center;
+ }
+ .items {
+   margin-left: 20px;
+   font-size: 17px;
+   font-weight: bold;
+ }
+ .name-shimmer {
+   border: 2px lightgray;
+   background-color: lightgray;
+   min-height: 25vh;
+   margin: 70px 20px 30px 20px;
+ }
+ .menu-shimmer {
+   margin: 20px;
+   min-height: 20vh;
+   width: 600px;
+   border: 2px solid lightgrey;
+   background-color: lightgray;
+ }
+ 
+
 
  
 
